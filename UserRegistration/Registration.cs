@@ -9,16 +9,18 @@ namespace UserRegistration
 {
     internal class Registration
     {
-        // UC2- Checking Validation for user's last name
-        const string Last_Name = "^[A-Z]{1}[a-z]{2,}$";
-        public void FirstName()
+        // UC3- Checking Validation for user's email-id.
+
+        //E.g. - Email has 3 mandatory parts (abc, bl& co) and 2 optional(xyz & in) withprecise @ and.positions
+        const string Email_Id = "^[A-Z]?[a-z]{1,}[.]?[a-z]*[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]?[a-z]*$";
+        public void Email()
         {
-            Console.Write("Enter the user's first name:  ");
+            Console.Write("Email-id should be like: abc.xyz @bl.co.in or abc@bl.co\nEnter the user's e-mail id:  ");
             string input = Console.ReadLine();
-            if (Regex.IsMatch(input, Last_Name))
-                Console.WriteLine("User's Last Name - " + input);
+            if (Regex.IsMatch(input, Email_Id))
+                Console.WriteLine("\nUser's mail id - " + input);
             else
-                Console.WriteLine("Name should contain atleast three characters");
+                Console.WriteLine("Email-id should be like as given above");
         }
     }
 }
