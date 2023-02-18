@@ -6,7 +6,7 @@
         {
             Console.WriteLine("*****  User Registration  *****");
             Registration registration = new Registration();
-            registration.Contact();
+            registration.Passowrd();
         }
     }
 }

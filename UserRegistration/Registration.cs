@@ -9,17 +9,17 @@ namespace UserRegistration
 {
     internal class Registration
     {
-        // UC4 - Mobile no followed by country code.
+        // UC5 - Password contains atleast 8 characters.
 
-        const string Mobile_No = "^[0-9]{2,}[ ]{1}[0-9]{10}$";
-        public void Contact()
+        const string Password_Rule = "^[A-Z,a-z,0-9]{8,}$";
+        public void Passowrd()
         {
-            Console.Write("User's mobile no followed by country code: ");
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, Mobile_No))
-                Console.WriteLine("\nUser's conatct no is: " + input);
+            Console.Write("User's password contains atleast 8 characters: ");
+            string password = Console.ReadLine();
+            if (Regex.IsMatch(password, Password_Rule))
+                Console.WriteLine("\nUser's password is: " + password);
             else
-                Console.WriteLine("No should be entered correctly");
+                Console.WriteLine("Choose your password as describes above");
         }
     }
 }
