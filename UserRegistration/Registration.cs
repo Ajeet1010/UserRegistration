@@ -9,18 +9,17 @@ namespace UserRegistration
 {
     internal class Registration
     {
-        // UC3- Checking Validation for user's email-id.
+        // UC4 - Mobile no followed by country code.
 
-        //E.g. - Email has 3 mandatory parts (abc, bl& co) and 2 optional(xyz & in) withprecise @ and.positions
-        const string Email_Id = "^[A-Z]?[a-z]{1,}[.]?[a-z]*[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]?[a-z]*$";
-        public void Email()
+        const string Mobile_No = "^[0-9]{2,}[ ]{1}[0-9]{10}$";
+        public void Contact()
         {
-            Console.Write("Email-id should be like: abc.xyz @bl.co.in or abc@bl.co\nEnter the user's e-mail id:  ");
+            Console.Write("User's mobile no followed by country code: ");
             string input = Console.ReadLine();
-            if (Regex.IsMatch(input, Email_Id))
-                Console.WriteLine("\nUser's mail id - " + input);
+            if (Regex.IsMatch(input, Mobile_No))
+                Console.WriteLine("\nUser's conatct no is: " + input);
             else
-                Console.WriteLine("Email-id should be like as given above");
+                Console.WriteLine("No should be entered correctly");
         }
     }
 }
