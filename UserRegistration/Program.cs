@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("*****  User Registration  *****");
+            Registration registration = new Registration();
+            registration.FirstName();
         }
     }
 }
