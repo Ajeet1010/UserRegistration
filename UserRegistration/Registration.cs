@@ -9,15 +9,15 @@ namespace UserRegistration
 {
     internal class Registration
     {
-        // UC5 - Password contains atleast 8 characters.
+        // UC6 - Password contains atleast 8 characters and also 1 UPPER CASE LETTER.
 
-        const string Password_Rule = "^[A-Z,a-z,0-9]{8,}$";
+        const string Password_Rule1 = "^[A-Z]+[A-Z,a-z,0-9]{8,}[A-Z]*[a-z,0-9]*$";
         public void Passowrd()
         {
-            Console.Write("User's password contains atleast 8 characters: ");
-            string password = Console.ReadLine();
-            if (Regex.IsMatch(password, Password_Rule))
-                Console.WriteLine("\nUser's password is: " + password);
+            Console.Write("User's password contains atleast 8 characters and 1 UPPER CASE: ");
+            string password1 = Console.ReadLine();
+            if (Regex.IsMatch(password1, Password_Rule1))
+                Console.WriteLine("\nUser's password is: " + password1);
             else
                 Console.WriteLine("Choose your password as describes above");
         }
