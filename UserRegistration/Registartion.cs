@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace UserRegistration
 {
-    // UC1- Check validation for USER's FIRST NAME.
+    // UC2- Check validation for USER's LAST NAME.
     internal class Registartion
     {
-        const string FIRST_NAME = "^[A-Z]{1}[a-z]{1,}$";
-        public void FirstName()
+        const string LAST_NAME = "^[A-Z]{1}[a-z]{1,}$";
+        public void LastName()
         {
-            Console.Write("Enter the user's first name:  ");
+            Console.Write("Enter the user's last name:  ");
             string input = Console.ReadLine();
-            if (Regex.IsMatch(input, FIRST_NAME))
-                Console.WriteLine("User's First Name - " + input);
+            if (Regex.IsMatch(input, LAST_NAME))
+                Console.WriteLine("User's Last Name - " + input);
             else
                 Console.WriteLine("First letter should be capital");
         }
