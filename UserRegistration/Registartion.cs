@@ -45,5 +45,17 @@ namespace UserRegistration
             else
                 Console.WriteLine("Email-id should be like as given above");
         }
+
+        // UC4- Check user entered correct mobile no.
+        const string Mobile_No = "^[0-9]{2,}[ ]{1}[0-9]{10}$";
+        public static void Contact()
+        {
+            Console.Write("User's mobile no followed by country code: ");
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, Mobile_No))
+                Console.WriteLine("\nUser's conatct no is: " + input);
+            else
+                Console.WriteLine("No should be entered correctly");
+        }
     }
 }

@@ -8,6 +8,7 @@
             Registartion.FirstName();
             Registartion.LastName();
             Registartion.Email();
+            Registartion.Contact();
         }
     }
 }
