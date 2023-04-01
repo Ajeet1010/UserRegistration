@@ -15,6 +15,7 @@ namespace UserRegistration
         const string Password_Rule = "^[A-Z,a-z,0-9]{8,}$";
         const string Password_Rule1 = "^[A-Z]+[A-Z,a-z,0-9]{8,}[A-Z]*[a-z,0-9]*$";
         const string Password_Rule2 = "^[A-Z,a-z,0-9]{8,}[0-9]+$";
+        const string Password_Rule3 = "^[A-Z,a-z,0-9]{8,}[!,@,#,%,$,^,&,*,<,>]+$";
 
         // UC1- Check validation for USER's FIRST NAME.
         public static void FirstName()
@@ -92,6 +93,18 @@ namespace UserRegistration
             string password2 = Console.ReadLine();
             if (Regex.IsMatch(password2, Password_Rule2))
                 Console.WriteLine("\nUser's password is: " + password2);
+            else
+                Console.WriteLine("Choose your password as describes above");
+        }
+
+        // UC8 - Password contains atleast 8 characters and also 1 SPECIAL CHARACTER.
+        public static void PasswordSPECIAL()
+        {
+            Console.WriteLine("Special Characters are:  (!,@,#,%,$,^,&,*,<,>) ");
+            Console.Write("User's password contains atleast 8 characters and 1 special character: ");
+            string password = Console.ReadLine();
+            if (Regex.IsMatch(password, Password_Rule3))
+                Console.WriteLine("\nUser's password is: " + password);
             else
                 Console.WriteLine("Choose your password as describes above");
         }
