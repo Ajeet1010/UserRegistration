@@ -5,30 +5,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("*****  User Registartion using REGEX pattern");
-            Console.Write("1. First Name.\n2. Last Name.\n3. Email-ID.\n4. Contact No.\n5. Password having 8 digits.\n\nChoose option to perform:");
-            int option = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Your choice is: " + option + "\n");
-            switch (option)
-            {
-                case 1:
-                    Registartion.FirstName();
-                    break;
-                case 2:
-                    Registartion.LastName();
-                    break;
-                case 3:
-                    Registartion.Email();
-                    break;
-                case 4:
-                    Registartion.Contact();
-                    break; 
-                case 5:
-                    Registartion.Passowrd();
-                    break;
-                default:
-                    Console.WriteLine("Enter correct choice: ");
-                    break;
-            }
+            Registartion registartion = new Registartion();
+            registartion.Password();
         }
     }
 }
