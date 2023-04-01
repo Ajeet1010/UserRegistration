@@ -14,6 +14,7 @@ namespace UserRegistration
         const string Mobile_No = "^[0-9]{2,}[ ]{1}[0-9]{10}$";
         const string Password_Rule = "^[A-Z,a-z,0-9]{8,}$";
         const string Password_Rule1 = "^[A-Z]+[A-Z,a-z,0-9]{8,}[A-Z]*[a-z,0-9]*$";
+        const string Password_Rule2 = "^[A-Z,a-z,0-9]{8,}[0-9]+$";
 
         // UC1- Check validation for USER's FIRST NAME.
         public static void FirstName()
@@ -80,6 +81,17 @@ namespace UserRegistration
             string password1 = Console.ReadLine();
             if (Regex.IsMatch(password1, Password_Rule1))
                 Console.WriteLine("\nUser's password is: " + password1);
+            else
+                Console.WriteLine("Choose your password as describes above");
+        }
+
+        // UC7 - Password contains atleast 8 characters and also 1 numeric no.
+        public static void PasswordNUMERIC()
+        {
+            Console.Write("User's password contains atleast 8 characters and 1 numeric no: ");
+            string password2 = Console.ReadLine();
+            if (Regex.IsMatch(password2, Password_Rule2))
+                Console.WriteLine("\nUser's password is: " + password2);
             else
                 Console.WriteLine("Choose your password as describes above");
         }

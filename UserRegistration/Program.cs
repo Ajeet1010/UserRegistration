@@ -6,7 +6,7 @@
         {
             Console.WriteLine("*****  User Registartion using REGEX pattern");
             Console.Write("1. First Name.\n2. Last Name.\n3. Email-ID.\n4. Contact No.\n5. Password having 8 digits.\n" +
-                "6. Password having atleast 1 UPPER CASE.\nChoose option to perform:");
+                "6. Password having atleast 1 UPPER CASE.\n7. Password having atleast 1 NUMERIC NO.\n\nChoose option to perform:");
             int option = Convert.ToInt32(Console.ReadLine());
             Console.Write("Your choice is: " + option + "\n");
             switch (option)
@@ -28,6 +28,9 @@
                     break;
                 case 6:
                     Registartion.PasswordUPPER();
+                    break;
+                case 7:
+                    Registartion.PasswordNUMERIC();
                     break;
                 default:
                     Console.WriteLine("Enter correct choice: ");
