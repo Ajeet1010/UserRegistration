@@ -6,11 +6,15 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace UserRegistration
-{    
+{
     internal class Registartion
     {
-        // UC1- Check validation for USER's FIRST NAME.
         const string FIRST_NAME = "^[A-Z]{1}[a-z]{1,}$";
+        const string LAST_NAME = "^[A-Z]{1}[a-z]{1,}$";
+        const string Mobile_No = "^[0-9]{2,}[ ]{1}[0-9]{10}$";
+        const string Password_Rule = "^[A-Z,a-z,0-9]{8,}$";
+
+        // UC1- Check validation for USER's FIRST NAME.
         public static void FirstName()
         {
             Console.Write("Enter the user's first name:  ");
@@ -22,7 +26,6 @@ namespace UserRegistration
         }
 
         // UC2- Check validation for USER's LAST NAME.
-        const string LAST_NAME = "^[A-Z]{1}[a-z]{1,}$";
         public static void LastName()
         {
             Console.Write("Enter the user's last name:  ");
@@ -47,7 +50,6 @@ namespace UserRegistration
         }
 
         // UC4- Check user entered correct mobile no.
-        const string Mobile_No = "^[0-9]{2,}[ ]{1}[0-9]{10}$";
         public static void Contact()
         {
             Console.Write("User's mobile no followed by country code: ");
@@ -56,6 +58,17 @@ namespace UserRegistration
                 Console.WriteLine("\nUser's conatct no is: " + input);
             else
                 Console.WriteLine("No should be entered correctly");
+        }
+
+        // UC5 - Password contains atleast 8 characters.
+        public static void Passowrd()
+        {
+            Console.Write("User's password contains atleast 8 characters: ");
+            string password = Console.ReadLine();
+            if (Regex.IsMatch(password, Password_Rule))
+                Console.WriteLine("\nUser's password is: " + password);
+            else
+                Console.WriteLine("Choose your password as describes above");
         }
     }
 }
